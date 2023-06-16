@@ -1,0 +1,1 @@
+export const url = "http://3.114.19.104:5050/";
