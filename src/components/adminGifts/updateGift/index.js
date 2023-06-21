@@ -12,7 +12,7 @@ export default function UpdateGift({ updateState, setUpdateState }) {
     const [discount, setDiscount] = useState(updateState.discount);
     const [available, setAvailable] = useState(updateState.availability);
 
-    useEffect(() => { console.log(updateState) }, []);
+    useEffect(() => { console.log(updateState) });
 
     //function to validate the image
     function validateImg(e) {

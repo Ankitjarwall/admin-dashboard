@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './createGift.css';
 import axios from "axios";
 import img from "../../../assets/img/gift_icon-removebg-preview.png";
-import { url } from "../../../assets/constants/data";
 
 export default function CreateGift({ setActiveState }) {
     const [name, setName] = useState(null);
