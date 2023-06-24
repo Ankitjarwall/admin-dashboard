@@ -17,6 +17,7 @@ export default function AdminLogin({ setIsAuthenticating }) {
         axios.post(`${url}api/v1/admin/login`, data)
             .then((res) => {
                 localStorage.setItem("authToken", res.data.token);
+                // console.log(res.data.token);
                 alert("Login as admin successful!");
                 setIsAuthenticating("granted");
             })
