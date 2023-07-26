@@ -18,19 +18,12 @@ function App() {
 
   useEffect(() => {
     let token = localStorage.getItem("authToken");
+    let config = {
+      headers: { authorization: `Bearer ${token}` }
+    };
     if (token) {
-      const data = { token };
-      console.log("fired", token);
-      axios.post(`${url}api/v1/frontend/verifyToken`, data).then((res) => {
-        console.log(res.data);
-        if (res.data.role === "admin") {
-          setIsAuthenticating("granted");
-          return
-        }
-        else {
-          setIsAuthenticating("declined");
-          return
-        }
+      axios.get(`${url}api/v1/frontend/verifyToken`, config).then((res) => {
+        setIsAuthenticating(res.data)
       })
     }
     setIsAuthenticating("declined");
